@@ -10,10 +10,6 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Lint Dockerfile
-      run: docker run --rm -i hadolint/hadolint < samples/${{ inputs.language }}/Dockerfile
-      shell: bash
-
     - name: Build and run
       run: |
         cd samples/${{ inputs.language }}
