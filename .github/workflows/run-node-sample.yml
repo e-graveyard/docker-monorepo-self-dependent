@@ -1,4 +1,4 @@
-name: run-python-sample
+name: run-node-sample
 
 
 on:
@@ -9,10 +9,10 @@ on:
 
 
 jobs:
-  run-python-sample:
+  run-node-sample:
     runs-on: ubuntu-latest
     env:
-      language: python
+      language: node
 
     steps:
       - name: Checkout code
