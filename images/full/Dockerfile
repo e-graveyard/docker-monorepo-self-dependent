@@ -1,4 +1,4 @@
-FROM caian/sample-devcontainer:0.6.0-bare
+FROM caian/sample-devcontainer:0.7.0-bare
 
 ARG DOCKER_DEFAULT_USER=turing
 ENV DOCKER_DEFAULT_USER $DOCKER_DEFAULT_USER
