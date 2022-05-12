@@ -1,11 +1,13 @@
+<p align="center">
+
 [![bare image][gh-bare-shield]][gh-bare-url]
 [![full image][gh-full-shield]][gh-full-url]
 [![edge image][gh-edge-shield]][gh-edge-url]
 [![github tag][tag-shield]][tag-url]
 
-# Docker monorepo with self-dependencies
-
 <img src=".docs/ship.gif" height="260px" align="right"/>
+<h1>docker monorepo with self-dependencies</h1>
+</p>
 
 This project exemplifies how to create a Docker [monorepo][monorepo] that has self-dependencies
 (one docker image based on another, inside this same repository) using [GitHub Actions][github-actions].
