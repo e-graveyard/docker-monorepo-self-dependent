@@ -25,15 +25,6 @@ This project exemplifies how to create a Docker [monorepo][monorepo] that has se
 [github-actions]: https://github.com/features/actions
 [monorepo]: https://monorepo.tools
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sollicitudin ipsum quis porttitor euismod. Curabitur
-auctor odio massa, in ultrices ex condimentum non. Donec in hendrerit diam. Suspendisse vestibulum justo felis, nec
-ultrices erat fermentum non. Quisque magna massa, ullamcorper at eros id, rutrum placerat velit. Mauris vulputate, nunc
-a aliquet scelerisque, lectus massa sollicitudin nisi, auctor laoreet lorem tellus ut massa. Ut malesuada, nisi non
-pellentesque porta, purus est sagittis odio, condimentum laoreet metus nisi quis diam.
-
-
-## Tag push diagram
-
 <details>
 <summary><strong>Tag push sequence diagram</strong> (click to expand :arrow_down:)</summary>
 
