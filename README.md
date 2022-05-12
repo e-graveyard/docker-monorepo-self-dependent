@@ -1,31 +1,25 @@
 <p align="center">
 
-[![bare image][gh-bare-shield]][gh-bare-url]
-[![full image][gh-full-shield]][gh-full-url]
-[![edge image][gh-edge-shield]][gh-edge-url]
-[![github tag][tag-shield]][tag-url]
-
+<a href="https://github.com/caian-org/docker-monorepo-self-dependent/actions/workflows/build-bare-image.yml">
+  <img src="https://img.shields.io/github/workflow/status/caian-org/docker-monorepo-self-dependent/build-bare-image?label=bare&amp;logo=docker&amp;logoColor=FFF&amp;style=for-the-badge">
+</a>
+<a href="https://github.com/caian-org/docker-monorepo-self-dependent/actions/workflows/build-full-image.yml">
+  <img src="https://img.shields.io/github/workflow/status/caian-org/docker-monorepo-self-dependent/build-full-image?label=full&amp;logo=docker&amp;logoColor=FFF&amp;style=for-the-badge">
+</a>
+<a href="https://github.com/caian-org/docker-monorepo-self-dependent/actions/workflows/build-edge-image.yml">
+  <img src="https://img.shields.io/github/workflow/status/caian-org/docker-monorepo-self-dependent/build-edge-image?label=edge&amp;logo=docker&amp;logoColor=FFF&amp;style=for-the-badge">
+</a>
+<a href="https://github.com/caian-org/docker-monorepo-self-dependent/tags">
+  <img src="https://img.shields.io/github/tag/caian-org/docker-monorepo-self-dependent.svg?logo=git&amp;logoColor=FFF&amp;style=for-the-badge" alt="github tag">
+</a>
 
 <img src=".docs/ship.gif" height="260px"/>
 <h1>docker monorepo with self-dependencies</h1>
 
 </p>
 
-
 This project exemplifies how to create a Docker [monorepo][monorepo] that has self-dependencies
 (one docker image based on another, inside this same repository) using [GitHub Actions][github-actions].
-
-[tag-shield]: https://img.shields.io/github/tag/caian-org/docker-monorepo-self-dependent.svg?logo=git&logoColor=FFF&style=for-the-badge
-[tag-url]: https://github.com/caian-org/docker-monorepo-self-dependent/tags
-
-[gh-bare-shield]: https://img.shields.io/github/workflow/status/caian-org/docker-monorepo-self-dependent/build-bare-image?label=bare&logo=docker&logoColor=FFF&style=for-the-badge
-[gh-bare-url]: https://github.com/caian-org/docker-monorepo-self-dependent/actions/workflows/build-bare-image.yml
-
-[gh-full-shield]: https://img.shields.io/github/workflow/status/caian-org/docker-monorepo-self-dependent/build-full-image?label=full&logo=docker&logoColor=FFF&style=for-the-badge
-[gh-full-url]: https://github.com/caian-org/docker-monorepo-self-dependent/actions/workflows/build-full-image.yml
-
-[gh-edge-shield]: https://img.shields.io/github/workflow/status/caian-org/docker-monorepo-self-dependent/build-edge-image?label=edge&logo=docker&logoColor=FFF&style=for-the-badge
-[gh-edge-url]: https://github.com/caian-org/docker-monorepo-self-dependent/actions/workflows/build-edge-image.yml
 
 [github-actions]: https://github.com/features/actions
 [monorepo]: https://monorepo.tools
