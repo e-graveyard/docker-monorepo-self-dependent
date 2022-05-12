@@ -1,0 +1,23 @@
+name: run-sample
+
+
+inputs:
+  language:
+    required: true
+    description: The programming language of the code sample
+
+
+runs:
+  using: composite
+  steps:
+    - name: Lint Dockerfile
+      run: docker run --rm -i hadolint/hadolint < samples/${{ inputs.language }}/Dockerfile
+      shell: bash
+
+    - name: Build and run
+      run: |
+        cd samples/${{ inputs.language }}
+
+        docker build -t weather-app .
+        docker run --rm weather-app tokyo
+      shell: bash

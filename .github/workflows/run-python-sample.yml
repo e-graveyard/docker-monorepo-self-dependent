@@ -1,0 +1,24 @@
+name: run-sample
+
+
+on:
+  repository_dispatch:
+    types: [run-sample]
+
+  workflow_dispatch:
+
+
+jobs:
+  build-edge-image:
+    runs-on: ubuntu-latest
+    env:
+      language: python
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build and run the "${{ env.language }}" sample
+        uses: ./.github/actions/run-sample
+        with:
+          language: ${{ env.language }}
