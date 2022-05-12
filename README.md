@@ -25,9 +25,11 @@ This project exemplifies how to create a Docker [monorepo][monorepo] that has se
 [github-actions]: https://github.com/features/actions
 [monorepo]: https://monorepo.tools
 
-<p>
+<ul>
+
+<li>
 <details>
-<summary markdown="span"><strong>Tag push sequence diagram</strong> (click to expand)</summary>
+<summary markdown="span"><strong>Tag push sequence diagram</strong> (click to expand :arrow_down:)</summary>
 
 ```mermaid
 sequenceDiagram
@@ -73,9 +75,10 @@ sequenceDiagram
     Note left of samples: tag latest
     samples-->github: "code samples" test ends
 ```
-
 </details>
-</p>
+</li>
+
+</ul>
 
 
 ## License
