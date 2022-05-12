@@ -18,6 +18,11 @@ inputs:
     required: true
     description: Authentication token for Docker Hub
 
+  push-latest:
+    required: false
+    default: 'no'
+    description: Whether the Docker image should also be pushed with the latest tag or not
+
 
 runs:
   using: composite
@@ -40,7 +45,9 @@ runs:
       uses: actions/cache@v3
       with:
         path: /tmp/.buildx-cache
-        key: build-image-${{ inputs.tag-suffix }}-buildx-${{ github.sha }}
+        key: |
+          build-image-${{ inputs.tag-suffix }}-buildx-${{ github.sha }}
+          build-image-${{ inputs.tag-suffix }}-buildx-
         restore-keys: |
           build-image-${{ inputs.tag-suffix }}-buildx-
 
@@ -49,7 +56,18 @@ runs:
       with:
         context: ${{ inputs.path }}
         push: true
-        tags: ${{ inputs.image-name }}
+        tags: ${{ inputs.image-name }}-${{ inputs.tag-suffix }}
+        builder: ${{ steps.buildx.outputs.name }}
+        cache-from: type=local,src=/tmp/.buildx-cache
+        cache-to: type=local,dest=/tmp/.buildx-cache
+
+    - name: Push "${{ inputs.tag-suffix }}" image with "latest" tag
+      if: inputs.push-latest == 'yes'
+      uses: docker/build-push-action@v2
+      with:
+        context: ${{ inputs.path }}
+        push: true
+        tags: ${{ inputs.image-name }}-${{ inputs.tag-suffix }}
         builder: ${{ steps.buildx.outputs.name }}
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache
