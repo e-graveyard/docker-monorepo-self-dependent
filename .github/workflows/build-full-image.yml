@@ -3,7 +3,7 @@ name: build-full-image
 
 on:
   repository_dispatch:
-    types: build-full-image
+    types: [build-full-image]
 
 
 jobs:
