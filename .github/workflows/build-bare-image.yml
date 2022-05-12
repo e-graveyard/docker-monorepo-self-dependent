@@ -14,12 +14,17 @@ jobs:
       tag-suffix: bare
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
       - name: Retrieve metadata for Docker
         id: meta
         uses: docker/metadata-action@v4
         with:
           images: caian/sample-devcontainer
-          tags: type=semver,pattern={{version}}
+          tags: |
+            type=semver,pattern={{version}}
+            type=raw,value=latest,enable=false
 
       - name: Build and push
         uses: ./.github/actions/build-and-push
@@ -27,3 +32,4 @@ jobs:
           path: image/${{ env.tag-suffix }}
           version: ${{ steps.meta.outputs.tags }}-${{ env.tag-suffix }}
           tag-suffix: ${{ env.tag-suffix }}
+          dockerhub-token: ${{ secrets.DOCKERHUB_TOKEN }}

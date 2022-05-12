@@ -14,21 +14,23 @@ inputs:
     required: true
     description: The Docker image tag suffix (bare, full, edge etc)
 
+  dockerhub-token:
+    required: true
+    description: Authentication token for Docker Hub
+
 
 runs:
   using: composite
   steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-
     - name: Lint Dockerfile
       run: docker run --rm -i hadolint/hadolint < ${{ inputs.path }}/Dockerfile
+      shell: bash
 
     - name: Login to Docker Hub
       uses: docker/login-action@v2
       with:
         username: caian
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
+        password: ${{ inputs.dockerhub-token }}
 
     - name: Set up Docker Buildx
       id: buildx
