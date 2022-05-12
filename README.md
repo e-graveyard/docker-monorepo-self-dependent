@@ -26,10 +26,9 @@ This project exemplifies how to create a Docker [monorepo][monorepo] that has se
 [monorepo]: https://monorepo.tools
 
 <ul>
-
 <li>
 <details>
-<summary markdown="span"><strong>Tag push sequence diagram</strong> (click to expand :arrow_down:)</summary>
+<summary><strong>Sequence diagram: Tag push</strong> <em>(click to expand)</em></summary>
 
 ```mermaid
 sequenceDiagram
@@ -75,9 +74,46 @@ sequenceDiagram
     Note left of samples: tag latest
     samples-->github: "code samples" test ends
 ```
+
 </details>
 </li>
 
+<li>
+<details>
+<summary><strong>Sequence diagram: Edge branch push</strong> <em>(click to expand)</em></summary>
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant user as User
+    participant github as GitHub Actions
+    participant build_edge as Edge build
+    participant dockerhub as Docker Hub
+    participant samples as Code samples
+
+    user->>github: Pushes
+    Note right of user: branch edge
+
+    github-)build_edge: Triggers
+    loop Every 8 hours
+        github-)build_edge: Schedule
+    end
+    build_edge->>dockerhub: Pulls
+    Note left of dockerhub: tag x.y.z-full
+    build_edge->>dockerhub: Pushes
+    Note left of dockerhub: tag latest
+    build_edge-)github: Dispatches
+    Note right of github: event "run-sample"
+    build_edge-->github: "edge" build ends
+
+    github-)samples: Triggers
+    samples->>dockerhub: Pulls
+    Note left of samples: tag latest
+    samples-->github: "code samples" test ends
+```
+
+</details>
+</li>
 </ul>
 
 
