@@ -8,7 +8,11 @@ inputs:
 
   image-name:
     required: true
-    description: The Docker image name (user/repo:tag)
+    description: The Docker image name (user/repo)
+
+  tagged-name:
+    required: true
+    description: The tagged Docker image name (user/repo:tag)
 
   tag-suffix:
     required: true
@@ -45,18 +49,17 @@ runs:
       uses: actions/cache@v3
       with:
         path: /tmp/.buildx-cache
-        key: |
-          build-image-${{ inputs.tag-suffix }}-buildx-${{ github.sha }}
-          build-image-${{ inputs.tag-suffix }}-buildx-
-        restore-keys: |
-          build-image-${{ inputs.tag-suffix }}-buildx-
+        key: ${{ env.cache-key }}
+        restore-keys: ${{ env.cache-key }}
+      env:
+        cache-key: build-image-${{ inputs.tag-suffix }}-buildx
 
     - name: Build and push "${{ inputs.tag-suffix }}" image
       uses: docker/build-push-action@v2
       with:
         context: ${{ inputs.path }}
         push: true
-        tags: ${{ inputs.image-name }}-${{ inputs.tag-suffix }}
+        tags: ${{ inputs.tagged-name }}-${{ inputs.tag-suffix }}
         builder: ${{ steps.buildx.outputs.name }}
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache
@@ -67,7 +70,7 @@ runs:
       with:
         context: ${{ inputs.path }}
         push: true
-        tags: ${{ inputs.image-name }}-${{ inputs.tag-suffix }}
+        tags: ${{ inputs.image-name }}:latest
         builder: ${{ steps.buildx.outputs.name }}
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache
