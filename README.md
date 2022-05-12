@@ -1,21 +1,21 @@
 <p align="center">
+  <a href="https://github.com/caian-org/docker-monorepo-self-dependent/actions/workflows/build-bare-image.yml">
+    <img src="https://img.shields.io/github/workflow/status/caian-org/docker-monorepo-self-dependent/build-bare-image?label=bare&amp;logo=docker&amp;logoColor=FFF&amp;style=for-the-badge">
+  </a>
+  <a href="https://github.com/caian-org/docker-monorepo-self-dependent/actions/workflows/build-full-image.yml">
+    <img src="https://img.shields.io/github/workflow/status/caian-org/docker-monorepo-self-dependent/build-full-image?label=full&amp;logo=docker&amp;logoColor=FFF&amp;style=for-the-badge">
+  </a>
+  <a href="https://github.com/caian-org/docker-monorepo-self-dependent/actions/workflows/build-edge-image.yml">
+    <img src="https://img.shields.io/github/workflow/status/caian-org/docker-monorepo-self-dependent/build-edge-image?label=edge&amp;logo=docker&amp;logoColor=FFF&amp;style=for-the-badge">
+  </a>
+  <a href="https://github.com/caian-org/docker-monorepo-self-dependent/tags">
+    <img src="https://img.shields.io/github/tag/caian-org/docker-monorepo-self-dependent.svg?logo=git&amp;logoColor=FFF&amp;style=for-the-badge" alt="github tag">
+  </a>
+</p>
 
-<a href="https://github.com/caian-org/docker-monorepo-self-dependent/actions/workflows/build-bare-image.yml">
-  <img src="https://img.shields.io/github/workflow/status/caian-org/docker-monorepo-self-dependent/build-bare-image?label=bare&amp;logo=docker&amp;logoColor=FFF&amp;style=for-the-badge">
-</a>
-<a href="https://github.com/caian-org/docker-monorepo-self-dependent/actions/workflows/build-full-image.yml">
-  <img src="https://img.shields.io/github/workflow/status/caian-org/docker-monorepo-self-dependent/build-full-image?label=full&amp;logo=docker&amp;logoColor=FFF&amp;style=for-the-badge">
-</a>
-<a href="https://github.com/caian-org/docker-monorepo-self-dependent/actions/workflows/build-edge-image.yml">
-  <img src="https://img.shields.io/github/workflow/status/caian-org/docker-monorepo-self-dependent/build-edge-image?label=edge&amp;logo=docker&amp;logoColor=FFF&amp;style=for-the-badge">
-</a>
-<a href="https://github.com/caian-org/docker-monorepo-self-dependent/tags">
-  <img src="https://img.shields.io/github/tag/caian-org/docker-monorepo-self-dependent.svg?logo=git&amp;logoColor=FFF&amp;style=for-the-badge" alt="github tag">
-</a>
-
-<img src=".docs/ship.gif" height="260px"/>
-<h1>docker monorepo with self-dependencies</h1>
-
+<p align="center">
+  <img src=".docs/ship.gif" height="260px"/>
+  <h1>docker monorepo with self-dependencies</h1>
 </p>
 
 This project exemplifies how to create a Docker [monorepo][monorepo] that has self-dependencies
