@@ -36,3 +36,9 @@ jobs:
           image-name:      "${{ env.image-name }}"
           dockerhub-token: "${{ secrets.DOCKERHUB_TOKEN }}"
           push-latest:     "yes"
+
+      - name: Trigger the code sample tests
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.GH_AUTH_TOKEN }}
+          event-type: run-sample
