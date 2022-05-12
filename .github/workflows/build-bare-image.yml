@@ -22,9 +22,8 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: caian/sample-devcontainer
-          tags: |
-            type=semver,pattern={{version}}
-            type=raw,value=latest,enable=false
+          tags: type=semver,pattern={{version}}
+          flavor: latest=false
 
       - name: Build and push
         uses: ./.github/actions/build-and-push
@@ -33,3 +32,10 @@ jobs:
           image-name: ${{ steps.meta.outputs.tags }}-${{ env.tag-suffix }}
           tag-suffix: ${{ env.tag-suffix }}
           dockerhub-token: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Trigger "full" image build
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          event-type: build-full-image
+          client-payload: '{"tag": "${{ steps.meta.outputs.tags }}"}'
