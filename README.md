@@ -11,9 +11,6 @@
   <a href="https://github.com/caian-org/docker-monorepo-self-dependent/tags">
     <img src="https://img.shields.io/github/tag/caian-org/docker-monorepo-self-dependent.svg?logo=git&amp;logoColor=FFF&amp;style=for-the-badge" alt="github tag">
   </a>
-</p>
-
-<p align="center">
   <img src=".docs/ship.gif" height="260px"/>
 </p>
 
