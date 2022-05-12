@@ -11,10 +11,13 @@
   <a href="https://github.com/caian-org/docker-monorepo-self-dependent/tags">
     <img src="https://img.shields.io/github/tag/caian-org/docker-monorepo-self-dependent.svg?logo=git&amp;logoColor=FFF&amp;style=for-the-badge" alt="github tag">
   </a>
-  <img src=".docs/ship.gif" height="260px"/>
 </p>
 
 <h1 align="center">docker monorepo with self-dependencies</h1>
+
+<p align="center">
+  <img src=".docs/ship.gif" height="260px"/>
+</p>
 
 This project exemplifies how to create a Docker [monorepo][monorepo] that has self-dependencies
 (one docker image based on another, inside this same repository) using [GitHub Actions][github-actions].
