@@ -17,6 +17,7 @@ RUN apt-get update \
         "curl=7.64.0*" \
         "git=1:2.20.1*" \
         "sudo=1.8.27*" \
+        "procps=2:3.3.*" \
     && update-ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
