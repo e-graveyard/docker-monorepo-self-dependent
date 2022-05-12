@@ -36,6 +36,6 @@ jobs:
       - name: Trigger "full" image build
         uses: peter-evans/repository-dispatch@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_AUTH_TOKEN }}
           event-type: build-full-image
           client-payload: '{"tag": "${{ steps.meta.outputs.tags }}"}'
