@@ -1,6 +1,6 @@
 <p align="center">
 
-<img src=".docs/ship.gif" height="260px" align="right"/>
+<img src=".docs/ship.gif" height="260px"/>
 <h1>docker monorepo with self-dependencies</h1>
 </p>
 
