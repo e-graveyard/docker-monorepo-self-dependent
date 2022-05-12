@@ -29,7 +29,7 @@ jobs:
       - name: Build and push
         uses: ./.github/actions/build-and-push
         with:
-          path: image/${{ env.tag-suffix }}
+          path: images/${{ env.tag-suffix }}
           version: ${{ steps.meta.outputs.tags }}-${{ env.tag-suffix }}
           tag-suffix: ${{ env.tag-suffix }}
           dockerhub-token: ${{ secrets.DOCKERHUB_TOKEN }}
