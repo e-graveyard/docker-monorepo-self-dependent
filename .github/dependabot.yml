@@ -15,3 +15,8 @@ updates:
     directory: /image/full
     schedule:
       interval: daily
+
+  - package-ecosystem: docker
+    directory: /image/edge
+    schedule:
+      interval: daily
