@@ -10,6 +10,7 @@ jobs:
   build-full-image:
     runs-on: ubuntu-latest
     env:
+      image-name: caian/sample-devcontainer
       tag-suffix: full
 
     steps:
@@ -21,7 +22,6 @@ jobs:
         with:
           path:            "images/${{ env.tag-suffix }}"
           tag-suffix:      "${{ env.tag-suffix }}"
-          image-name:      "${{ github.event.client_payload.image_name }}"
           tagged-name:     "${{ github.event.client_payload.tagged_name }}"
           dockerhub-token: "${{ secrets.DOCKERHUB_TOKEN }}"
 
@@ -32,6 +32,5 @@ jobs:
           event-type: build-edge-image
           client-payload: >
             {
-              "image_name":  "${{ github.event.client_payload.image_name }}",
               "tagged_name": "${{ github.event.client_payload.tagged_name }}"
             }

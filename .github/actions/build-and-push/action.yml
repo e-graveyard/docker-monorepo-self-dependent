@@ -6,14 +6,6 @@ inputs:
     required: true
     description: The directory path of the Dockerfile (context location)
 
-  image-name:
-    required: true
-    description: The Docker image name (user/repo)
-
-  tagged-name:
-    required: true
-    description: The tagged Docker image name (user/repo:tag)
-
   tag-suffix:
     required: true
     description: The Docker image tag suffix (bare, full, edge etc)
@@ -21,6 +13,16 @@ inputs:
   dockerhub-token:
     required: true
     description: Authentication token for Docker Hub
+
+  image-name:
+    required: false
+    default: ''
+    description: The Docker image name (user/repo)
+
+  tagged-name:
+    required: false
+    default:  ''
+    description: The tagged Docker image name (user/repo:tag)
 
   push-latest:
     required: false
@@ -55,6 +57,7 @@ runs:
         cache-key: buildx-image-${{ inputs.tag-suffix }}
 
     - name: Build and push "${{ inputs.tag-suffix }}" image
+      if: inputs.push-latest == 'no'
       uses: docker/build-push-action@v2
       with:
         context: ${{ inputs.path }}

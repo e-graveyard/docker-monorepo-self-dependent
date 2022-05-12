@@ -31,7 +31,6 @@ jobs:
         with:
           path:            "images/${{ env.tag-suffix }}"
           tag-suffix:      "${{ env.tag-suffix }}"
-          image-name:      "${{ env.image-name }}"
           tagged-name:     "${{ steps.meta.outputs.tags }}"
           dockerhub-token: "${{ secrets.DOCKERHUB_TOKEN }}"
 
@@ -42,6 +41,5 @@ jobs:
           event-type: build-full-image
           client-payload: >
             {
-              "image_name":  "${{ env.image-name }}",
               "tagged_name": "${{ steps.meta.outputs.tags }}"
             }
