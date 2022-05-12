@@ -52,7 +52,7 @@ runs:
         key: ${{ env.cache-key }}
         restore-keys: ${{ env.cache-key }}
       env:
-        cache-key: build-image-${{ inputs.tag-suffix }}-buildx
+        cache-key: buildx-image-${{ inputs.tag-suffix }}
 
     - name: Build and push "${{ inputs.tag-suffix }}" image
       uses: docker/build-push-action@v2
