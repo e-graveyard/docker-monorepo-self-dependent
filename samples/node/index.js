@@ -21,11 +21,16 @@ async function getWeatherInfoOf(city) {
 
 async function main() {
     const city = getCityArg()
-    const forecast = await getWeatherInfoOf(city)
-
     console.log(`Weather forecast for ${capitalize(city)} city\n`)
-    for (const weather of forecast) {
-        console.log(` | ${getDate(weather.day)} ~ ${weather.temp}, ${weather.wind}`)
+
+    try {
+        const forecast = await getWeatherInfoOf(city)
+
+        for (const weather of forecast) {
+            console.log(` | ${getDate(weather.day)} ~ ${weather.temp}, ${weather.wind}`)
+        }
+    } catch (e) {
+        console.log('Unknown')
     }
 }
 

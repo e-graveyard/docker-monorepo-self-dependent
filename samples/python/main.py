@@ -31,11 +31,15 @@ def get_date(days_to_add=0):
 
 def main():
     city = get_city_arg()
-    forecast = get_weather_info_of(city)
-
     print(f'Weather forecast for {city.capitalize()} city\n')
-    for weather in forecast:
-        print(f' | {get_date(weather["day"])} ~ {weather["temp"]}, {weather["wind"]}')
+
+    try:
+        forecast = get_weather_info_of(city)
+        for weather in forecast:
+            print(f' | {get_date(weather["day"])} ~ {weather["temp"]}, {weather["wind"]}')
+
+    except Exception:
+        print('Unknown')
 
 
 if __name__ == '__main__':
